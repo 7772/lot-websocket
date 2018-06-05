@@ -7,14 +7,14 @@
 const port = 5000;
 
 const WebSocketServer = require('ws').Server,
-  wss = new WebSocketServer({port: port});
+  wss = new WebSocketServer({port: process.env.PORT || port});
 
 // url parse 를 위해 선언
 const url = require('url');
 
-WebSocketServer.listen(port, function() {
-  console.log("App is running on port " + port);
-});
+// WebSocketServer.listen(port, function() {
+//   console.log("App is running on port " + port);
+// });
 
 console.log(`LOT WebSocket Server Start.. port : ${port}`);
 
